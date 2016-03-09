@@ -1,0 +1,105 @@
+// Chapter 4
+// Data Structures: Objects and Arrays
+
+
+
+////////// The Sum of a Range //////////
+
+
+function range(start, end, step){
+
+  // use [] for array instead of {} for an object
+  var arr = [];
+
+  // negative increments
+  if(step < 0){
+      for(var y = start; y >= end; y+=step)
+        arr.push(y);
+
+  // positive incremenets
+  } else if (step > 0){
+      for(var z = start; z <= end; z+=step)
+            arr.push(z);
+  // when "step" is undefined
+  } else for(var x = start; x <= end; x++)
+    arr.push(x);
+      return arr;
+}
+
+function sum(arr){
+var sum = arr.reduce(add,0);
+  function add(a,b){
+    return a + b;
+  }
+  return sum;
+}
+
+// code checks
+console.log(range(1, 10));
+// → [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log(range(5, 2, -1));
+// → [5, 4, 3, 2]
+console.log(sum(range(1, 10)));
+// → 55
+
+
+
+////////// Reversing an Array //////////
+
+
+// not the solution, but the JS method is .reverse()
+function reverse(arr){
+  console.log(arr.reverse());
+}
+
+// reverse array by creating a new array
+function reverseArray(arr){
+  newArray = [];
+
+  // use arr.length - 1 since arrays start at 0
+  for(x = arr.length - 1; x >= 0; x--)
+    newArray.push(arr[x]);
+    console.log(newArray);
+}
+
+// another way to reverse the array by creating a new array
+function reverseArray(arr){
+  newArray = [];
+  for(x = 0; x < arr.length; x++)
+
+  // .unshift() method places a new array element at the beginning of an array
+  newArray.unshift(arr[x]);
+  return newArray;
+}
+
+// reverse array by reversing elements without creating a new array
+function reverseArrayInPlace(arr){
+
+// divides the array length in half and Math.floor rounds down; if odd number you don't need to swap the middle number
+  for(x = 0; x < Math.floor(arr.length/2); x++){
+
+    // temporarily assigns a variable to the old array
+    var old =  arr[x];
+
+    // swaps the old array with the new array
+    arr[x] = arr[arr.length - x - 1];
+    arr[arr.length - x - 1] = old
+
+  // important to have the brackets {} for..loop function so that it iterates over the entire array before returning the final array
+  }
+    return arr;
+}
+
+// code checks
+console.log(reverseArray(["A", "B", "C"]));
+// → ["C", "B", "A"];
+var arrayValue = [1, 2, 3, 4, 5];
+reverseArrayInPlace(arrayValue);
+console.log(arrayValue);
+// → [5, 4, 3, 2, 1]
+
+
+
+////////// A List //////////
+
+
