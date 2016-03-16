@@ -6,6 +6,7 @@
 ////////// The Sum of a Range //////////
 
 
+// creates an array that displays all numbers from start to end, using the interval of "step" if it is defined, otherwise using +1 as the interval
 function range(start, end, step){
 
   // use [] for array instead of {} for an object
@@ -26,6 +27,7 @@ function range(start, end, step){
       return arr;
 }
 
+// sums all the numbers in range of the array, inclusive
 function sum(arr){
 var sum = arr.reduce(add,0);
   function add(a,b){
@@ -125,3 +127,4 @@ function listToArray(list){
   return arr;
 }
 
+// 
