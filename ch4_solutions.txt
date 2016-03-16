@@ -127,4 +127,9 @@ function listToArray(list){
   return arr;
 }
 
-// 
+// takes an element and a list and creates a new list that adds the element to the front of the input list
+function prepend(element,list){
+  return newList = {value: element, rest: list};
+}
+
+// takes a list and a number and returns the element at the given position in the list, or undefined when there is no such element
