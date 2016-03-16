@@ -103,3 +103,15 @@ console.log(arrayValue);
 ////////// A List //////////
 
 
+// convert an array to a list
+function arrayToList(arr){
+
+    // need to declare variable as 'null' value otherwise it will show as 'undefined'
+    var list = null;
+    for(i = arguments.length; i >= 0; i--){
+      var list = {value: arr[i], rest: list};
+  }
+  return list;
+}
+
+// convert a list to an array
