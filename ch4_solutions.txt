@@ -115,3 +115,13 @@ function arrayToList(arr){
 }
 
 // convert a list to an array
+function listToArray(list){
+  var arr = [];
+
+  // for every sublist in the original list that exists, give the sublist's value (node.value) until there are no more sublist items in the list (node.rest), i.e. sublist === null
+  for (var node = list; node; node = node.rest) {
+    arr.push(node.value);
+  }
+  return arr;
+}
+
