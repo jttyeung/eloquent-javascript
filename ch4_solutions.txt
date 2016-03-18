@@ -133,3 +133,17 @@ function prepend(element,list){
 }
 
 // takes a list and a number and returns the element at the given position in the list, or undefined when there is no such element
+function nth(list, n) {
+
+  // if list does not exist, return undefined
+  if (!list)
+    return undefined;
+
+  // otherwise if n == 0, return the first value of the list
+  else if (n == 0)
+    return list.value;
+
+  // otherwise return nth, which is n-1 in the list since the count starts at 0
+  else
+    return nth(list.rest, n - 1);
+}
